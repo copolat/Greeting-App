@@ -6,14 +6,16 @@ import reportWebVitals from './reportWebVitals';
 
 // JSX - Rendering as a first argument of React
 
-const header = {
-  <div>
-    <h1> Hello World</h1>,
-    <p>This is a parent / chikd  use example</p>
-  </div>
+function Header() {
+  return (
+    <div>
+      <h1>Hello World</h1>
+      <p>Basic example for parent / child relationship using state and props</p>
+    </div>
+  )
 }
 ReactDOM.render(
-  header, 
+  <Header />, 
   document.getElementById('root')
 );
 
