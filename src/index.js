@@ -4,10 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// JSX - Rendering as a first argument of React
+
+const header = {
+  <div>
+    <h1> Hello World</h1>,
+    <p>This is a parent / chikd  use example</p>
+  </div>
+}
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  header, 
   document.getElementById('root')
 );
 
