@@ -1,4 +1,6 @@
 import React from 'react'
+import Form from './components/Form'
+import GreetingMessage from './components/GreetingMessage'
 
 class App extends React.Component {
   constructor(props){
@@ -7,20 +9,18 @@ class App extends React.Component {
       userName: 'Guest',
       newUser: ''
     }
-    this.handleChange = this.handleChange.bind(this);
+    this.updateName = this.updateName.bind(this);
   }
-  handleChange(e) {
+  updateName(name) {
     this.setState({
-      newUser: e.target.value,
-      userName: e.target.value.trim() ? e.target.value : 'Guest'
+      userName: name.trim() ? name : 'Guest'
     })
   }
   render() {
     return (
       <div>
-        <h1>Hello {this.state.userName}</h1>
-        <label htmlFor="user_name">Enter your name: </label> 
-        <input id="user_name" type="text" onChange={this.handleChange} value={this.state.newUser}/>
+        <GreetingMessage name={this.state.userName}/>
+        <Form onInput={this.updateName}/>
         </div>
     )
   }
